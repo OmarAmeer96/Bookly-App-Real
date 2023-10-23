@@ -3,7 +3,6 @@ import 'package:bookly_app/Core/utils/responsive.dart';
 import 'package:bookly_app/Core/utils/styles.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_list_view_item_image.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_rating.dart';
-import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -44,13 +43,12 @@ class BestSellerListViewItem extends StatelessWidget {
                   ),
                   SizedBox(
                     width: Responsive.screenWidth(context) * 0.59,
-                    child: Text(
-                      "J.K. Rowling",
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: Styles.montserratMedium.copyWith(
-                        color: kTextColor1,
-                      ),
+                    child: const Opacity(
+                      opacity: 0.6,
+                      child: Text("J.K. Rowling",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Styles.montserratMedium),
                     ),
                   ),
                   const SizedBox(
