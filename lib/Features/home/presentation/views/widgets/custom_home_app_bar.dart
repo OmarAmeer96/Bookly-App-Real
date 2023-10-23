@@ -1,6 +1,8 @@
+import 'package:bookly_app/Core/utils/app_router.dart';
 import 'package:bookly_app/Core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomHomeAppBar extends StatelessWidget {
   const CustomHomeAppBar({
@@ -12,7 +14,7 @@ class CustomHomeAppBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(
         left: 25,
-        right: 25 - 8,
+        right: 8,
         top: 20,
         bottom: 12,
       ),
@@ -28,7 +30,9 @@ class CustomHomeAppBar extends StatelessWidget {
               AssetsData.searchIcon,
               width: 26,
             ),
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kSearchView);
+            },
           ),
         ],
       ),
