@@ -1,0 +1,11 @@
+<svg id="ic_cart" data-name="ic cart" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <rect id="bound" width="25" height="25" fill="none"/>
+  <g id="Group" transform="translate(1 3)">
+    <g id="Group_10" data-name="Group 10" transform="translate(0.579 0.347)">
+      <path id="Stroke_85" data-name="Stroke 85" d="M0,1.563A1.563,1.563,0,1,1,1.563,3.126,1.563,1.563,0,0,1,0,1.563Z" transform="translate(13.547 14.589)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_86" data-name="Stroke 86" d="M0,1.563A1.563,1.563,0,1,1,1.563,3.126,1.563,1.563,0,0,1,0,1.563Z" transform="translate(5.211 14.589)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_87" data-name="Stroke 87" d="M0,0H2.657l2.23,11.369a2.67,2.67,0,0,0,2.605,2.178H17.716" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Stroke_88" data-name="Stroke 88" d="M0,0H16.674L15.95,5.7a1.843,1.843,0,0,1-1.839,1.6H1.389" transform="translate(3.126 2.084)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
