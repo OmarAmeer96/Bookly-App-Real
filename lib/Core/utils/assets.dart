@@ -4,4 +4,6 @@ class AssetsData {
   static const testImage = 'assets/images/test_image.png';
   static const testImage2 = 'assets/images/test_image_2.png';
   static const star = 'assets/svg/Star.svg';
+  static const closeIcon = 'assets/images/closeIcon.png';
+  static const cartIcon = 'assets/svg/cartIcon.svg';
 }

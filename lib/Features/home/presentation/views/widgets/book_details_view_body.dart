@@ -1,38 +1,14 @@
-import 'package:bookly_app/Core/utils/assets.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 25,
-            right: 25 - 8,
-            top: 45,
-            bottom: 12,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SvgPicture.asset(
-                AssetsData.logo,
-                width: 90,
-              ),
-              IconButton(
-                icon: SvgPicture.asset(
-                  AssetsData.searchIcon,
-                  width: 26,
-                ),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ),
+        CustomBookDetailsAppBar(),
       ],
     );
   }
