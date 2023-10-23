@@ -9,7 +9,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
       padding: const EdgeInsets.only(
         left: 20,
         right: 25 - 8,
-        top: 45,
+        top: 20,
         bottom: 12,
       ),
       child: Row(
