@@ -52,8 +52,10 @@ class BookDetailsViewBody extends StatelessWidget {
           height: 37,
         ),
         const BooksActions(),
-        const SizedBox(
-          height: 43,
+        const Expanded(
+          child: SizedBox(
+            height: 43,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -70,8 +72,9 @@ class BookDetailsViewBody extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        const Expanded(
-          child: SimilarBooksListView(),
+        SizedBox(
+          height: Responsive.screenHeight(context) * 0.15,
+          child: const SimilarBooksListView(),
         ),
         const SizedBox(
           height: 27,
