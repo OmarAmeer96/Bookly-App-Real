@@ -26,7 +26,7 @@ class SearchViewBody extends StatelessWidget {
                   height: 30,
                 ),
                 Text(
-                  "Results",
+                  "Search Results",
                   style: Styles.montserratSemiBold,
                 ),
                 SizedBox(
