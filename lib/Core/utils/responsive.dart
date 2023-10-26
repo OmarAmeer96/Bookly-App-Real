@@ -12,6 +12,4 @@ class Responsive {
   static double textScaleFactor(BuildContext context) {
     return MediaQuery.of(context).textScaleFactor;
   }
-
-  // You can add more responsive methods here based on your requirements.
 }
