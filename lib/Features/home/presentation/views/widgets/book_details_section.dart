@@ -16,7 +16,9 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: Responsive.screenWidth(context) * 0.28,
           ),
-          child: const CustomBookImage(),
+          child: const CustomBookImage(
+            imageUrl: "https://web-strapi.mrmilu.com/uploads/flutter_logo_470e9f7491.png",
+          ),
         ),
         const SizedBox(
           height: 43,
