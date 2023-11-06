@@ -16,6 +16,7 @@ class CustomErrorWidget extends StatelessWidget {
         child: Text(
           errMessage,
           style: Styles.montserratMedium.copyWith(fontSize: 18),
+          textAlign: TextAlign.center,
         ),
       ),
     );
