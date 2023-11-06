@@ -17,7 +17,8 @@ class BookDetailsSection extends StatelessWidget {
             horizontal: Responsive.screenWidth(context) * 0.28,
           ),
           child: const CustomBookImage(
-            imageUrl: "https://web-strapi.mrmilu.com/uploads/flutter_logo_470e9f7491.png",
+            imageUrl:
+                "https://web-strapi.mrmilu.com/uploads/flutter_logo_470e9f7491.png",
           ),
         ),
         const SizedBox(
@@ -45,6 +46,8 @@ class BookDetailsSection extends StatelessWidget {
           height: 16,
         ),
         const BookRating(
+          rating: 4,
+          count: 5002,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(

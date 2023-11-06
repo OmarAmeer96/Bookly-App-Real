@@ -8,7 +8,12 @@ class BookRating extends StatelessWidget {
   const BookRating({
     super.key,
     this.mainAxisAlignment = MainAxisAlignment.start,
+    required this.rating,
+    required this.count,
   });
+
+  final int? rating;
+  final int? count;
 
   final MainAxisAlignment mainAxisAlignment;
   @override
@@ -23,8 +28,8 @@ class BookRating extends StatelessWidget {
         SizedBox(
           width: Responsive.screenWidth(context) * 0.014,
         ),
-        const Text(
-          "4.8",
+        Text(
+          "$rating",
           style: Styles.montserratMedium,
         ),
         SizedBox(
@@ -33,7 +38,7 @@ class BookRating extends StatelessWidget {
         Opacity(
           opacity: 0.5,
           child: Text(
-            "(2390)",
+            "($count)",
             style: Styles.montserratRegular.copyWith(),
           ),
         ),

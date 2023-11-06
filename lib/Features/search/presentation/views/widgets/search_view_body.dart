@@ -43,7 +43,7 @@ class SearchViewBody extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 20),
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: BestSellerListViewItem(),
+                  // child: BestSellerListViewItem(),
                 ),
               );
             },

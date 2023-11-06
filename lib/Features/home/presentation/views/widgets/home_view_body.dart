@@ -31,7 +31,7 @@ class HomeViewBody extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
-                  "Best Seller",
+                  "Newest Books",
                   style: Styles.montserratSemiBold,
                 ),
               ),
@@ -79,12 +79,12 @@ class HomeViewBody extends StatelessWidget {
               return SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
-                    return const Padding(
-                      padding: EdgeInsets.only(bottom: 20),
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: BestSellerListViewItem(
-                          
+                          bookModel: state.books[index],
                         ),
                       ),
                     );

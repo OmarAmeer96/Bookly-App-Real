@@ -1,13 +1,19 @@
 import 'package:bookly_app/Core/utils/app_router.dart';
 import 'package:bookly_app/Core/utils/responsive.dart';
 import 'package:bookly_app/Core/utils/styles.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_list_view_item_image.dart';
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_rating.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_image.dart.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+  const BestSellerListViewItem({
+    super.key,
+    required this.bookModel,
+  });
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +26,8 @@ class BestSellerListViewItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const BestSellerListViewItemImage(
+            CustomBookImage(
+              imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
             ),
             SizedBox(
               width: Responsive.screenWidth(context) * 0.08,
@@ -32,8 +39,8 @@ class BestSellerListViewItem extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: Responsive.screenWidth(context) * 0.59,
-                    child: const Text(
-                      "Batman The Dark Knight Rises",
+                    child: Text(
+                      bookModel.volumeInfo.title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.gtSectraFineRegular,
@@ -44,12 +51,14 @@ class BestSellerListViewItem extends StatelessWidget {
                   ),
                   SizedBox(
                     width: Responsive.screenWidth(context) * 0.59,
-                    child: const Opacity(
+                    child: Opacity(
                       opacity: 0.6,
-                      child: Text("J.K. Rowling",
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: Styles.montserratMedium),
+                      child: Text(
+                        bookModel.volumeInfo.publisher,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: Styles.montserratMedium,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -60,13 +69,16 @@ class BestSellerListViewItem extends StatelessWidget {
                     child: Row(
                       children: [
                         const Text(
-                          "19.99 \$",
+                          "Free",
                           style: Styles.montserratBold,
                         ),
                         SizedBox(
                           width: Responsive.screenWidth(context) * 0.08,
                         ),
-                        const BookRating(),
+                        BookRating(
+                          rating: bookModel.volumeInfo.averageRating ?? 0,
+                          count: bookModel.volumeInfo.ratingsCount ?? 0,
+                        ),
                       ],
                     ),
                   ),
