@@ -79,13 +79,12 @@ class HomeViewBody extends StatelessWidget {
               return SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 20),
+                    return const Padding(
+                      padding: EdgeInsets.only(bottom: 20),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: EdgeInsets.symmetric(horizontal: 20),
                         child: BestSellerListViewItem(
-                          imageUrl: state
-                              .books[index].volumeInfo.imageLinks.thumbnail,
+                          
                         ),
                       ),
                     );

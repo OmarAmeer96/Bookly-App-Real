@@ -4,10 +4,7 @@ import 'package:flutter/material.dart';
 class BestSellerListViewItemImage extends StatelessWidget {
   const BestSellerListViewItemImage({
     super.key,
-    required this.imageUrl,
   });
-
-  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +13,7 @@ class BestSellerListViewItemImage extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadiusDirectional.circular(18),
         child: CachedNetworkImage(
-          imageUrl: imageUrl,
+          imageUrl: "https://cdn-images-1.medium.com/v2/resize:fit:1200/1*5-aoK8IBmXve5whBQM90GA.png",
         ),
       ),
     );
