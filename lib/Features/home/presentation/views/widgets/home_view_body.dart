@@ -1,8 +1,12 @@
+import 'package:bookly_app/Core/utils/custom_loading_card.dart';
 import 'package:bookly_app/Core/utils/styles.dart';
+import 'package:bookly_app/Core/widgets/custom_error_widget.dart';
+import 'package:bookly_app/Features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/featured_books_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -69,19 +73,48 @@ class HomeViewBody extends StatelessWidget {
           }
         }
         */
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return const Padding(
-                padding: EdgeInsets.only(bottom: 20),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: BestSellerListViewItem(),
+        BlocBuilder<NewestBooksCubit, NewestBooksState>(
+          builder: (context, state) {
+            if (state is NewestBooksSuccess) {
+              return SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: BestSellerListViewItem(
+                          imageUrl: state
+                              .books[index].volumeInfo.imageLinks.thumbnail,
+                        ),
+                      ),
+                    );
+                  },
+                  childCount: state.books.length,
                 ),
               );
-            },
-            childCount: 10,
-          ),
+            } else if (state is NewestBooksFailure) {
+              return SliverToBoxAdapter(
+                child: CustomErrorWidget(
+                  errMessage: state.errMessage,
+                ),
+              );
+            } else {
+              return SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    children: [
+                      loadingCard(),
+                      loadingCard(),
+                      loadingCard(),
+                      loadingCard(),
+                    ],
+                  ),
+                ),
+              );
+            }
+          },
         ),
       ],
     );

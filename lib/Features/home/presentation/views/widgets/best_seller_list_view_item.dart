@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+  const BestSellerListViewItem({super.key, required this.imageUrl});
+
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,9 @@ class BestSellerListViewItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const BestSellerListViewItemImage(),
+            BestSellerListViewItemImage(
+              imageUrl: imageUrl,
+            ),
             SizedBox(
               width: Responsive.screenWidth(context) * 0.08,
             ),
