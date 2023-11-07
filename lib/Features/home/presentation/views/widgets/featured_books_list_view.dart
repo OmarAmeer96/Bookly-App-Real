@@ -1,4 +1,4 @@
-import 'package:bookly_app/Core/utils/custom_loading_card.dart';
+import 'package:bookly_app/Core/utils/featured_books_loading_card.dart';
 import 'package:bookly_app/Core/utils/responsive.dart';
 import 'package:bookly_app/Core/widgets/custom_error_widget.dart';
 import 'package:bookly_app/Features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
@@ -24,7 +24,8 @@ class FeaturedBooksListView extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 7),
                   child: CustomBookImage(
-                    imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+                    imageUrl:
+                        state.books[index].volumeInfo.imageLinks.thumbnail,
                   ),
                 );
               },
@@ -35,9 +36,19 @@ class FeaturedBooksListView extends StatelessWidget {
             errMessage: state.errMessage,
           );
         } else {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: loadingCard(),
+          return SizedBox(
+            height: Responsive.screenHeight(context) * 0.255,
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemCount: 5,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 7),
+                  child: featuredBooksLoadingCard(),
+                );
+              },
+            ),
           );
         }
       },

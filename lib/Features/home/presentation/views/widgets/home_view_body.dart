@@ -1,4 +1,4 @@
-import 'package:bookly_app/Core/utils/custom_loading_card.dart';
+import 'package:bookly_app/Core/utils/newest_books_loading_card.dart';
 import 'package:bookly_app/Core/utils/styles.dart';
 import 'package:bookly_app/Core/widgets/custom_error_widget.dart';
 import 'package:bookly_app/Features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
@@ -99,17 +99,15 @@ class HomeViewBody extends StatelessWidget {
                 ),
               );
             } else {
-              return SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      loadingCard(),
-                      loadingCard(),
-                      loadingCard(),
-                      loadingCard(),
-                    ],
-                  ),
+              return SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: newestBooksloadingCard(),
+                    );
+                  },
+                  childCount: 5,
                 ),
               );
             }
