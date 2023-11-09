@@ -7,8 +7,8 @@ import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({
+class NewestBooksListViewItem extends StatelessWidget {
+  const NewestBooksListViewItem({
     super.key,
     required this.bookModel,
   });
@@ -76,7 +76,8 @@ class BestSellerListViewItem extends StatelessWidget {
                           width: Responsive.screenWidth(context) * 0.08,
                         ),
                         BookRating(
-                          rating: bookModel.volumeInfo.averageRating?.round() ?? 0,
+                          rating:
+                              bookModel.volumeInfo.averageRating?.round() ?? 0,
                           count: bookModel.volumeInfo.ratingsCount ?? 0,
                         ),
                       ],

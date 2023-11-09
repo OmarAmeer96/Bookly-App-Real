@@ -2,7 +2,7 @@ import 'package:bookly_app/Core/utils/newest_books_loading_card.dart';
 import 'package:bookly_app/Core/utils/styles.dart';
 import 'package:bookly_app/Core/widgets/custom_error_widget.dart';
 import 'package:bookly_app/Features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_list_view_item.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/newest_books_list_view_item.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/featured_books_list_view.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +83,7 @@ class HomeViewBody extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 20),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: BestSellerListViewItem(
+                        child: NewestBooksListViewItem(
                           bookModel: state.books[index],
                         ),
                       ),
