@@ -14,6 +14,8 @@ class BookDetailsView extends StatefulWidget {
 }
 
 class _BookDetailsViewState extends State<BookDetailsView> {
+
+  // initState for Triggering the fetchSimilarBooks Function.
   @override
   void initState() {
     BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(
