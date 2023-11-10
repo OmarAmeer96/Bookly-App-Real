@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-Shimmer featuredBooksLoadingCard() {
+Shimmer booksLoadingCard() {
   return Shimmer.fromColors(
     baseColor: const Color.fromARGB(255, 20, 14, 41),
     highlightColor: const Color(0xFF220E33),

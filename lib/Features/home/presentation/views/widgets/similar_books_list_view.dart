@@ -1,25 +1,40 @@
+import 'package:bookly_app/Core/widgets/custom_error_widget.dart';
+import 'package:bookly_app/Features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/books_loading_card_list_view.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_image.dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SimilarBooksListView extends StatelessWidget {
   const SimilarBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        itemCount: 10,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 6),
-            child: CustomBookImage(
-              imageUrl: "https://web-strapi.mrmilu.com/uploads/flutter_logo_470e9f7491.png",
+    return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
+      builder: (context, state) {
+        if (state is SimilarBooksSuccess) {
+          return SizedBox(
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemCount: 10,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 6),
+                  child: CustomBookImage(
+                    imageUrl:
+                        "https://web-strapi.mrmilu.com/uploads/flutter_logo_470e9f7491.png",
+                  ),
+                );
+              },
             ),
           );
-        },
-      ),
+        } else if (state is SimilarBooksFailure) {
+          return CustomErrorWidget(errMessage: state.errMessage);
+        } else {
+          return const BooksLoadingCardListView();
+        }
+      },
     );
   }
 }
