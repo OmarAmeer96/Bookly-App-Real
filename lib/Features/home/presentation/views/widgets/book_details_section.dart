@@ -20,7 +20,7 @@ class BookDetailsSection extends StatelessWidget {
             horizontal: Responsive.screenWidth(context) * 0.28,
           ),
           child: CustomBookImage(
-            imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
+            imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
           ),
         ),
         const SizedBox(
@@ -60,7 +60,7 @@ class BookDetailsSection extends StatelessWidget {
           height: 16,
         ),
         BookRating(
-          rating: bookModel.volumeInfo.averageRating?.round() ?? 0,
+          rating: bookModel.volumeInfo.averageRating ?? 0,
           count: bookModel.volumeInfo.ratingsCount ?? 0,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
