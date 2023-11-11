@@ -71,9 +71,9 @@ class NewestBooksListViewItem extends StatelessWidget {
                     width: Responsive.screenWidth(context) * 0.61,
                     child: Row(
                       children: [
-                        const Text(
+                        Text(
                           "Free",
-                          style: Styles.montserratBold,
+                          style: Styles.montserratBold.copyWith(fontSize: 20),
                         ),
                         SizedBox(
                           width: Responsive.screenWidth(context) * 0.08,
