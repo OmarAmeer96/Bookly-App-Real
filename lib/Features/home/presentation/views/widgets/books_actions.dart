@@ -1,6 +1,6 @@
 import 'package:bookly_app/Core/utils/custom_url_launcher.dart';
 import 'package:bookly_app/Core/widgets/custom_button.dart';
-import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/Core/models/book_model/book_model.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
 
