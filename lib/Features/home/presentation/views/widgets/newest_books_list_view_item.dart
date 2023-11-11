@@ -57,7 +57,7 @@ class NewestBooksListViewItem extends StatelessWidget {
                     child: Opacity(
                       opacity: 0.6,
                       child: Text(
-                        bookModel.volumeInfo.publisher,
+                        bookModel.volumeInfo.publisher ?? '',
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: Styles.montserratMedium,

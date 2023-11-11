@@ -46,7 +46,7 @@ class BookDetailsSection extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
-              bookModel.volumeInfo.publisher,
+              bookModel.volumeInfo.publisher ?? '',
               textAlign: TextAlign.center,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
